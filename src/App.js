@@ -7,7 +7,7 @@ import Heroes from './components/Heroes';
 
 function App() {
   return (
-    <Tabs defaultActiveKey="calculator" id="uncontrolled-tab-example">
+    <Tabs defaultActiveKey="herolist" id="uncontrolled-tab-example">
       <Tab eventKey="calculator" title="Calculator">
         <Calculator></Calculator>
       </Tab>
