@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Display from './Display';
+import Keyboard from './Keyboard';
 
 const InitState = 0;
 const FirstFigureState = 1;
@@ -102,39 +104,19 @@ class Calculator extends Component {
         }
     }
 
+    handleSignal(value) {
+        if (typeof value === 'string') {
+            this.handleSymbol(value);
+        } else if (typeof value === 'number') {
+            this.handleNumber(value);
+        }
+    }
+
     render() {
         return (
             <div>
-
-                <h4>{this.state.display}</h4>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td><button onClick={() => this.handleNumber(7)}>7</button></td>
-                            <td><button onClick={() => this.handleNumber(8)}>8</button></td>
-                            <td><button onClick={() => this.handleNumber(9)}>9</button></td>
-                            <td><button onClick={() => this.handleSymbol('/')}>/</button></td>
-                        </tr>
-                        <tr>
-                            <td><button onClick={() => this.handleNumber(4)}>4</button></td>
-                            <td><button onClick={() => this.handleNumber(5)}>5</button></td>
-                            <td><button onClick={() => this.handleNumber(6)}>6</button></td>
-                            <td><button onClick={() => this.handleSymbol('*')}>*</button></td>
-                        </tr>
-                        <tr>
-                            <td><button onClick={() => this.handleNumber(1)}>1</button></td>
-                            <td><button onClick={() => this.handleNumber(2)}>2</button></td>
-                            <td><button onClick={() => this.handleNumber(3)}>3</button></td>
-                            <td><button onClick={() => this.handleSymbol('-')}>-</button></td>
-                        </tr>
-                        <tr>
-                            <td><button onClick={() => this.handleSymbol('.')}>.</button></td>
-                            <td><button onClick={() => this.handleNumber(0)}>0</button></td>
-                            <td><button onClick={() => this.handleSymbol('=')}>=</button></td>
-                            <td><button onClick={() => this.handleSymbol('+')}>+</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <Display content={this.state.display}></Display>
+                <Keyboard signal={(value) => this.handleSignal(value)}></Keyboard>
             </div>
         );
     }
