@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+
 
 class Apod extends Component {
     constructor(props) {
@@ -46,6 +49,19 @@ class Apod extends Component {
     render() {
         return (
             <div>
+                <div class="container">
+                <Jumbotron>
+                    <h1>{this.state.response.title}</h1>
+                    <img src={this.state.response.url} width="100%" alt=""></img>
+                    <p>
+                        {this.state.response.explanation}
+                        </p>
+                    <p>
+                        <Button variant="primary">Learn more</Button>
+                    </p>
+                </Jumbotron>
+                    
+                </div>
                 {JSON.stringify(this.state.response)}
             </div>
         );
