@@ -5,7 +5,7 @@ const FirstFigureState = 1;
 const SecondFigureState = 2;
 const ResultState = 3;
 
-class MyComponent extends Component {
+class Calculator extends Component {
 
     constructor(props) {
         super(props);
@@ -140,4 +140,4 @@ class MyComponent extends Component {
     }
 }
 
-export default MyComponent;
+export default Calculator;

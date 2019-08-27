@@ -1,9 +1,9 @@
 import React from 'react';
-import MyComponent from './MyComponent';
+import Calculator from './components/Calculator';
 
 function App() {
   return (
-    <MyComponent></MyComponent>
+    <Calculator></Calculator>
   );
 }
 
