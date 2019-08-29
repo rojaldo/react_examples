@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../model/Card';
+import CardComponent from './CardComponent';
 
 class Trivial extends Component {
     constructor(props) {
@@ -59,18 +60,11 @@ class Trivial extends Component {
     }
 
     render() {
-        const listCards = this.state.cards.map((card, i) => <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" key={i}>
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">{card.question}</h4>
-                    {card.answers.map((answer, i) => <button type="button" name="" key={i} id={i} class="btn btn-primary btn-lg btn-block">{answer}</button>)}
-                </div>
-            </div>
-        </div>);
+        const listCards = this.state.cards.map((card, i) => 
+        <CardComponent card={card} key={i}></CardComponent>);
+
         return (
-
             <div class="container">
-
                 <div class="row">
                     {listCards}
                 </div>
