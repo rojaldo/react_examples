@@ -5,10 +5,11 @@ import Tab from 'react-bootstrap/Tab';
 import Heroes from './components/Heroes';
 import Apod from './components/Apod';
 import Beers from './components/Beers';
+import Trivial from './components/Trivial';
 
 function App() {
   return (
-    <Tabs defaultActiveKey="beers" id="uncontrolled-tab-example">
+    <Tabs defaultActiveKey="trivial" id="uncontrolled-tab-example">
       <Tab eventKey="calculator" title="Calculator">
         <Calculator></Calculator>
       </Tab>
@@ -20,6 +21,9 @@ function App() {
       </Tab>
       <Tab eventKey="beers" title="Beers">
         <Beers></Beers>
+      </Tab>
+      <Tab eventKey="trivial" title="Trivial">
+        <Trivial></Trivial>
       </Tab>
     </Tabs>
   );
