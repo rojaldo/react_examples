@@ -5,7 +5,6 @@ import ShowApod from './ShowApod';
 import moment from 'moment';
 import "react-datepicker/dist/react-datepicker.css";
 
-
 class Apod extends Component {
     constructor(props) {
         super(props);
